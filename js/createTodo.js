@@ -13,20 +13,12 @@ const getQuerySelector = () => {
   To_Do_Array.map((targetEl) => {
     if (targetEl !== 'priority') {
       const inputElement = document.querySelector(`input[name="${targetEl}"]`);
-      return inputEventHandler(inputElement);
+      if (inputElement) {
+        inputEventHandler(inputElement);
+      }
     }
   });
   changeHandler();
-};
-
-const changeHandler = () => {
-  priorityEls.forEach((radio) => {
-    radio.addEventListener('change', (event) => {
-      const { name, value } = event.target;
-      todo = { ...todo, [name]: value };
-      return todo;
-    });
-  });
 };
 
 const inputEventHandler = (targetEl) => {
@@ -43,4 +35,12 @@ const temporaryStorageTodo = (name, value) => {
   return todo;
 };
 
-export { getQuerySelector, temporaryStorageTodo };
+const changeHandler = () => {
+  priorityEls.forEach((radio) => {
+    radio.addEventListener('change', (event) => {
+      const { name, id } = event.target;
+      temporaryStorageTodo(name, id);
+    });
+  });
+};
+export { getQuerySelector, temporaryStorageTodo, todo };
