@@ -4,39 +4,40 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>To Do List</title>
+    <script defer  type="module" src="./js/createTodo.js"></script>
   </head>
   <body>
     <header>To Do List</header>
     <section class="to-do-form">
       <form>
         <label>
-          <input type="text" name="to-do"/>
+          <input type="text" name="task" class="task"/>
         </label>
         <div class="priority-area">
             <span>우선순위</span>
             <label>
                 <span>낮음</span>
-                <input type="radio" name="priority"/>
+                <input type="radio" name="priority" value="low" checked/>
             </label>
-            <label>
+            <label for="normal">
                 <span>보통</span>
-                <input type="radio" name="priority"/>
+                <input type="radio" name="priority" value="normal"/>
             </label>
-            <label>
+            <label for="high">
                 <span>높음</span>
-                <input type="radio" name="priority"/>
+                <input type="radio" name="priority" value="high"/>
             </label>
         </div>
         <div class="start-date">
             <label>
                 <span>시작일</span>
-                <input type="date" name="start-date"/>
+                <input type="date" name="startDate"/>
             </label>
         </div>
-        <div class=end-date">
+        <div class="end-date">
             <label >
                 <span>마감일</span>
-                <input type="date" name="end-date" />
+                <input type="date" name="endDate" />
             </label>
         </div>
         <div class="btn-area">
