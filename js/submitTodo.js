@@ -7,9 +7,15 @@ const submitTodo = () => {
   formEl.addEventListener('submit', (event) => {
     event.preventDefault();
     const formData = new FormData();
+
     const tempTodo = temporaryStorageTodo();
     for (let key in tempTodo) {
-      formData.append(key, tempTodo[key]);
+      const undefiendKey = key === undefined;
+      const undefiendValue = tempTodo[key] === undefined;
+      const notUndefiendData = !undefiendKey && !undefiendValue;
+      if (notUndefiendData) {
+        formData.append(key, tempTodo[key]);
+      }
     }
     restInputFields();
   });
