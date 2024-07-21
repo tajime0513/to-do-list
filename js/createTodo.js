@@ -39,11 +39,9 @@ const inputEventHandler = (targetEl) => {
   }
 };
 
-export const temporaryStorageTodo = (name, value) => {
+const temporaryStorageTodo = (name, value) => {
   todo = { ...todo, [name]: value };
   return todo;
 };
 
-getQuerySelector();
-
-console.log(todo);
+export { getQuerySelector, temporaryStorageTodo };
