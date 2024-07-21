@@ -1,3 +1,3 @@
-import { getQuerySelector } from './createTodo';
+import { getQuerySelector } from './createTodo.js';
 
 getQuerySelector()
