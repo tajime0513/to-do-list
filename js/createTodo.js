@@ -9,16 +9,17 @@ let todo = {
 
 const priorityEls = document.querySelectorAll('input[name="priority"]');
 
-function getQuerySelector() {
+const getQuerySelector = () => {
   To_Do_Array.map((targetEl) => {
     if (targetEl !== 'priority') {
       const inputElement = document.querySelector(`input[name="${targetEl}"]`);
       return inputEventHandler(inputElement);
     }
   });
-}
+  changeHandler();
+};
 
-function changeHandler() {
+const changeHandler = () => {
   priorityEls.forEach((radio) => {
     radio.addEventListener('change', (event) => {
       const { name, value } = event.target;
@@ -26,18 +27,20 @@ function changeHandler() {
       return todo;
     });
   });
-}
+};
 
-function inputEventHandler(targetEl) {
+const inputEventHandler = (targetEl) => {
   if (targetEl) {
-    console.log(targetEl);
     targetEl.addEventListener('input', (event) => {
       const { name, value } = event.target;
-      todo = { ...todo, [name]: value };
-      return todo;
+      temporaryStorageTodo(name, value);
     });
-    changeHandler();
   }
-}
+};
 
-getQuerySelector();
+const temporaryStorageTodo = (name, value) => {
+  todo = { ...todo, [name]: value };
+  return todo;
+};
+
+export { getQuerySelector, temporaryStorageTodo };
