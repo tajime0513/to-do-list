@@ -1,12 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>To Do List</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>To Do List</header>
-    
-</body>
+    <section class="to-do-form">
+      <form>
+        <label>
+          <input type="text" name="to-do"/>
+        </label>
+        <div class="priority-area">
+            <span>우선순위</span>
+            <label>
+                <span>낮음</span>
+                <input type="radio" name="priority"/>
+            </label>
+            <label>
+                <span>보통</span>
+                <input type="radio" name="priority"/>
+            </label>
+            <label>
+                <span>높음</span>
+                <input type="radio" name="priority"/>
+            </label>
+        </div>
+        <div class="start-date">
+            <label>
+                <span>시작일</span>
+                <input type="date" name="start-date"/>
+            </label>
+        </div>
+        <div class=end-date">
+            <label >
+                <span>마감일</span>
+                <input type="date" name="end-date" />
+            </label>
+        </div>
+        <div class="btn-area">
+            <button>입력</button>
+        </div>
+      </form>
+    </section>
+    <section class="to-do-list-area">
+        <ul>
+        </ul>
+    </section>
+  </body>
 </html>
