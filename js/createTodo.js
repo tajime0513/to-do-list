@@ -31,7 +31,6 @@ const changeHandler = () => {
 
 const inputEventHandler = (targetEl) => {
   if (targetEl) {
-    console.log(targetEl);
     targetEl.addEventListener('input', (event) => {
       const { name, value } = event.target;
       temporaryStorageTodo(name, value);
